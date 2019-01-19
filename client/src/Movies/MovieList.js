@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import MovieCard from './MovieCard';
+import styled from 'styled-components';
+
+const MovieListContainer = styled.div `
+  border: 1px solid red;
+`
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -24,11 +29,11 @@ export default class MovieList extends Component {
 
   render() {
     return (
-      <div className="movie-list">
+      <MovieListContainer>
         {this.state.movies.map(movie => (
           <MovieDetails key={movie.id} movie={movie} />
         ))}
-      </div>
+      </MovieListContainer>
     );
   }
 }
